@@ -26,32 +26,36 @@ El proyecto simula la base de datos de una empresa comercial con sucursales en *
 erp-comercial-sql/
 │
 ├── README.md
-├── imagenes/
-│   ├── diagrama_er.png                -- Diagrama entidad-relación
-│   └── screenshots/                   -- Capturas de resultados clave
-│       ├── resumen_ventas.png
-│       ├── stock_critico.png
-│       └── analisis_negocio.png
+├── screenshots/
+│   ├── diagrama_er.png                      -- Diagrama entidad-relación
+│   └── pedidos_cliente_vendedor_sucursal    -- Capturas de resultados clave
+│   └── resumen_ventas.png                   -- Capturas de resultados clave
+│   └── stock_critico.png                    -- Capturas de resultados clave
+│   └── total_vendido_por_pedido.png         -- Capturas de resultados clave
+|   └── ventas_acumuladas_por_cliente.png    -- Capturas de resultados clave  
+|   └── ventas_por_producto_categoria.png    -- Capturas de resultados clave
 ├── scripts/
-│   ├── 01_crear_tablas.sql            -- DDL: estructura completa de la base de datos
-│   ├── 02_insertar_datos.sql          -- DML: datos de prueba
-│   └── 03_consultas.sql               -- Consultas generales de análisis
+│   ├── 01_crear_tablas.sql                  -- DDL: estructura completa de la base de datos
+│   ├── 02_insertar_datos.sql                -- DML: datos de prueba
+│   └── 03_consultas.sql                     -- Consultas generales de análisis
 ├── objetos/
-│   ├── vistas.sql                     -- Vistas: resumen_de_ventas y stock_actual
-│   ├── funciones.sql                  -- Función: calcular_totales_con_descuento
-│   ├── procedimientos.sql             -- Procedimiento: resumir_compras_por_cliente
-│   ├── triggers.sql                   -- Trigger: actualizar_inventario
-│   ├── indices.sql                    -- Índices de optimización
-│   └── transacciones.sql              -- Transacción: actualizar inventario y pagos
+│   ├── vistas.sql                           -- Vistas: resumen_de_ventas y stock_actual
+│   ├── funciones.sql                        -- Función: calcular_totales_con_descuento
+│   ├── procedimientos.sql                   -- Procedimiento: resumir_compras_por_cliente
+│   ├── triggers.sql                         -- Trigger: actualizar_inventario
+│   ├── indices.sql                          -- Índices de optimización
+│   └── transacciones.sql                    -- Transacción: actualizar inventario y pagos
 └── analisis/
-    └── preguntas_negocio.sql          -- 10 preguntas de negocio respondidas
+    └── preguntas_negocio.sql                -- 10 preguntas de negocio respondidas
 ```
 
 ---
 
 ## 🧱 Modelo de Datos
 
-> 📌 El diagrama ER completo se encuentra en `/imagenes/diagrama_er.png`
+📌 Diagrama ER
+
+<img src="screenshots/diagrama_er.png" width="700"/>
 
 ### Tablas de Hechos
 Registran eventos o transacciones del negocio — contienen métricas y claves foráneas.
@@ -79,6 +83,35 @@ Proveen contexto descriptivo a las tablas de hechos.
 | `productos` | Catálogo con precio, costo y stock mínimo | `id_producto`, `nombre_producto`, `id_categoria`, `id_proveedor`, `precio_unitario`, `costo_unitario`, `stock_minimo` |
 | `categorias` | Clasificación de productos | `id_categoria`, `nombre_categoria` |
 | `proveedores` | Proveedores por país con contacto | `id_proveedor`, `nombre_proveedor`, `pais`, `contacto` |
+
+---
+
+## 👁️ Capturas de resultados clave
+
+### Pedidos con informacion del cliente, el vendedor y la sucursal
+
+<img src="screenshots/pedidos_cliente_vendedor_sucursal.png" width="700"/>
+
+### Vista creada del resumen de ventas
+
+<img src="screenshots/resumen_ventas.png" width="700"/>
+
+### Productos con stock critico por sucursal
+
+<img src="screenshots/stock_critico.png" width="700"/>
+
+### Total de Ventas por pedido
+
+<img src="screenshots/total_vendido_por_pedido.png" width="700"/>
+
+### Ventas acumuladas por clientes
+
+<img src="screenshots/ventas_acumuladas_por_cliente.png" width="700"/>
+
+### Ventas acumuladas por producto y categoria
+
+<img src="screenshots/ventas_por_producto_categoria.png" width="700"/>
+
 
 ---
 
