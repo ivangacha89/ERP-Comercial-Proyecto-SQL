@@ -11,7 +11,6 @@ Los datos son ficticios y generados para fines educativos.
 ## 🛠️ Tecnologías
 
 ![MySQL](https://img.shields.io/badge/MySQL-8.0-blue?logo=mysql)
-![SQL](https://img.shields.io/badge/SQL-Intermedio-orange)
 ![Workbench](https://img.shields.io/badge/MySQL_Workbench-8.0-lightblue?logo=mysql)
 
 ---
