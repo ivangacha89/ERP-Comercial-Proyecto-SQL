@@ -4,6 +4,8 @@ Simulación de un sistema ERP comercial construido en **MySQL**, que modela el c
 
 Proyecto desarrollado como práctica de SQL, con enfoque en análisis de datos.
 
+Los datos son ficticios y generados para fines educativos.
+
 ---
 
 ## 🛠️ Tecnologías
@@ -14,9 +16,36 @@ Proyecto desarrollado como práctica de SQL, con enfoque en análisis de datos.
 
 ---
 
-## 📋 Descripción
+## 🎯 Objetivo
 
-El proyecto simula la base de datos de una empresa comercial con sucursales en **Chile, Perú y Colombia**, cubriendo desde el registro de clientes y productos hasta el análisis de ventas por canal, vendedor y sucursal.
+Desarrollar habilidades de análisis de datos mediante SQL, aplicadas a un sistema ERP comercial simulado. El proyecto busca consolidar el uso de JOINs, subconsultas, funciones de agregación, agrupaciones y filtros complejos para responder preguntas de negocio reales sobre ventas, clientes, productos, inventario y operaciones.
+
+---
+
+## ❓ Preguntas a Responder con este Proyecto
+
+### 📊 Ventas y Rentabilidad
+- ¿Cuál es el total de ingresos por sucursal y por mes?
+- ¿Qué productos generan mayor margen de ganancia?
+- ¿Qué canal de venta genera más ingresos?
+
+### 👥 Clientes y Segmentación
+- ¿Qué cliente tiene mayor volumen de compras acumulado?
+- ¿Qué segmento de clientes es más rentable?
+
+### 🧑‍💼 Rendimiento de Vendedores
+- ¿Qué vendedor tiene el mayor número de ventas acumuladas?
+- ¿Cuál es el ingreso total generado por cada vendedor?
+- ¿Qué vendedores tienen pedidos con estado pendiente o cancelado?
+
+### 📦 Inventario y Operaciones
+- ¿Qué productos tienen stock por debajo del mínimo requerido?
+- ¿Cuántas devoluciones ha registrado cada producto y cuál es el motivo más frecuente?
+
+### 💳 Pagos y Logística
+- ¿Qué pedidos tienen pago pendiente o fueron cancelados?
+- ¿Cuál es el costo promedio de envío por empresa de logística?
+- ¿Qué método de pago es el más utilizado?
 
 ---
 
@@ -51,7 +80,7 @@ erp-comercial-sql/
 
 ---
 
-## 🧱 Modelo de Datos
+## 🚧 Modelo de Datos
 
 📌 Diagrama ER
 
@@ -86,7 +115,7 @@ Proveen contexto descriptivo a las tablas de hechos.
 
 ---
 
-## 👁️ Capturas de resultados clave
+## 📷 Capturas de resultados clave
 
 ### Pedidos con informacion del cliente, el vendedor y la sucursal
 
@@ -329,15 +358,14 @@ SOURCE analisis/preguntas_negocio.sql;
 
 ---
 
-## 👤 Autor
+## 📝 Conclusiones
 
-**[TU NOMBRE]**
-[LinkedIn] • [Correo o portafolio]
+- El uso de `JOIN` entre múltiples tablas (pedidos, clientes, vendedores, productos) permite construir vistas analíticas completas que ninguna tabla aislada podría ofrecer, reforzando la importancia de un modelo relacional bien diseñado.
+- Las funciones de agregación combinadas con `GROUP BY` y `HAVING` son herramientas centrales para responder preguntas de negocio reales; dominarlas marca la diferencia entre una consulta básica y un análisis útil.
+- Las subconsultas y el filtrado por condiciones derivadas (como stock bajo mínimo o clientes sin pedidos recientes) demuestran que SQL va más allá de la extracción simple de datos y puede encapsular lógica de negocio directamente en la consulta.
+- Trabajar con datos simulados de un ERP permite entender cómo se relacionan las áreas de ventas, inventario, logística y finanzas, lo que es esencial para el análisis de datos en contextos empresariales reales.
+- Este proyecto evidenció que la claridad en el modelo de datos (nombres de columnas consistentes, claves foráneas bien definidas) impacta directamente en la facilidad de escribir y mantener consultas analíticas.
 
 ---
 
-## 📝 Notas
-
-- Los datos son ficticios y generados para fines educativos
-- El proyecto fue desarrollado como parte de un proceso de aprendizaje continuo en análisis de datos
-- Las columnas `fecha_pago` (tabla `pagos`) y `fecha_envio` (tabla `envios`) son las únicas que permiten `NULL` — representan registros aún no procesados
+*Proyecto desarrollado como parte del portafolio de análisis de datos.*
